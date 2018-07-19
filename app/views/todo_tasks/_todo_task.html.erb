@@ -1,0 +1,2 @@
+<p><%= todo_task.content %></p>
+<%= link_to "Supprimer", todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: {confirm: "Etes-vous sur ?"} %>
