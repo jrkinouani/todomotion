@@ -1,23 +1,32 @@
+
 <div class="row clearfix">
  <% if todo_task.completed? %>
   <div class="complete">
-    <%= link_to "Tâche réussit", complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch %>
+    <%= link_to complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch do %>
+    <i style="opacity: 0.4;" class="fa fa-check"></i>
+    <% end %>
   </div>
-  <div class="todo_task">
-    <p style="opacity: 0,4"><strike><%= todo_task.content %></strike></p>
+  <div class="todo_item">
+    <p style="opacity: 0.4;"><strike><%= todo_task.content %></strike></p>
   </div>
   <div class="trash">
-    <%= link_to "Supprimer la tâche", todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: {confirm: "Etes-vous sur ?"} %>
+    <%= link_to todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: {confirm: "Etes-vous sur ?"} do %>
+    <i class="fa fa-trash"></i>
+    <%end %>
   </div>
  <% else%>
    <div class="complete">
-     <%= link_to "Tâche réussit",  complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch %>
+     <%= link_to  complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch do %>
+     <i class="fa fa-check"></i>
+     <% end %>
    </div>
-   <div class="todo_task">
+   <div class="todo_item">
      <p><%= todo_task.content %></p>
    </div>
    <div class="trash">
-     <%= link_to "Supprimer la tâche", todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: {confirm: "Etes-vous sur ?"} %><br>
+     <%= link_to todo_list_todo_task_path(@todo_list, todo_task.id), method: :delete, data: {confirm: "Etes-vous sur ?"} do %>
+     <i class="fa fa-trash"></i>
+     <% end %>
    </div>
    <% end %>
 </div>
