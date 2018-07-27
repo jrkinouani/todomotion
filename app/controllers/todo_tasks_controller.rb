@@ -6,6 +6,7 @@ class TodoTasksController < ApplicationController
   def create
     @todo_task = @todo_list.todo_tasks.create(todo_task_params)
     redirect_to @todo_list
+    
   end
 
   def destroy

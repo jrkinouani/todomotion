@@ -2,6 +2,7 @@
 <div class="row clearfix">
  <% if todo_task.completed? %>
   <div class="complete">
+    
     <%= link_to complete_todo_list_todo_task_path(@todo_list, todo_task.id), method: :patch do %>
     <i style="opacity: 0.4;" class="fa fa-check"></i>
     <% end %>
